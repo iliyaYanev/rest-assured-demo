@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+}
+
+group 'org.mentormate'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    useJUnitPlatform()
+}
+
+dependencies {
+    testImplementation 'io.rest-assured:rest-assured-all:4.3.0'
+    testImplementation 'io.rest-assured:json-schema-validator:4.3.0'
+    testImplementation 'io.rest-assured:spring-mock-mvc:4.3.0'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
