@@ -1,13 +1,16 @@
 package dao;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.LocalDate;
 
 public class User {
 
+    private String id;
     private String firstName;
     private String lastName;
     private String gender;
-    private LocalDate dob;
+    private String dob;
     private String email;
     private String phone;
     private String website;
@@ -19,7 +22,7 @@ public class User {
 
     }
 
-    public User(String firstName, String lastName, String gender, LocalDate dob, String email,
+    public User(String firstName, String lastName, String gender, String dob, String email,
         String phone, String website, String address, Status status, Resources links) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -33,18 +36,30 @@ public class User {
         this.links = links;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    @JsonProperty("first_name")
     public String getFirstName() {
         return firstName;
     }
 
+    @JsonProperty("first_name")
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
+    @JsonProperty("last_name")
     public String getLastName() {
         return lastName;
     }
 
+    @JsonProperty("last_name")
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
@@ -55,14 +70,6 @@ public class User {
 
     public void setGender(String gender) {
         this.gender = gender;
-    }
-
-    public LocalDate getDob() {
-        return dob;
-    }
-
-    public void setDob(LocalDate dob) {
-        this.dob = dob;
     }
 
     public String getEmail() {
@@ -105,11 +112,21 @@ public class User {
         this.status = status;
     }
 
+    @JsonProperty("_links")
     public Resources getLinks() {
         return links;
     }
 
+    @JsonProperty("_links")
     public void setLinks(Resources links) {
         this.links = links;
+    }
+
+    public String getDob() {
+        return dob;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
     }
 }

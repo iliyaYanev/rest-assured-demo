@@ -1,6 +1,7 @@
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
+import dao.BaseResponse;
 import dao.CreateUser;
 import dao.User;
 import io.restassured.http.ContentType;
@@ -77,7 +78,7 @@ public class CreateUserTests extends TestConfig {
         createUser.setGender("male");
         createUser.setEmail("randomemail@email.com");
 
-        Response response = (Response) given()
+        BaseResponse response = given()
             .contentType(ContentType.JSON)
             .and()
                 .auth()
@@ -91,6 +92,10 @@ public class CreateUserTests extends TestConfig {
                 .body()
             .and()
                 .body("_meta.code", equalTo(201))
-            .extract();
+            .extract()
+            .as(BaseResponse.class);
+
+        assert createUser.getFirstName().equals(response.getResult().getFirstName());
+        assert createUser.getLastName().equals(response.getResult().getLastName());
     }
 }
