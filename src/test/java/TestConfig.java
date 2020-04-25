@@ -1,4 +1,6 @@
 import io.restassured.RestAssured;
+import io.restassured.path.json.JsonPath;
+import io.restassured.path.json.config.JsonPathConfig;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -17,6 +19,8 @@ public class TestConfig {
     @Before
     public void setup() throws IOException {
         RestAssured.baseURI = "https://gorest.co.in/public-api";
+        JsonPath.config = new JsonPathConfig("UTF-8");
+
         users = "/users";
         usersById = "/users/{userId}";
         posts = "/posts";
