@@ -1,9 +1,21 @@
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.lessThan;
+
 import io.restassured.RestAssured;
+import io.restassured.authentication.AuthenticationScheme;
+import io.restassured.builder.RequestSpecBuilder;
+import io.restassured.builder.ResponseSpecBuilder;
+import io.restassured.filter.log.LogDetail;
+import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.path.json.config.JsonPathConfig;
+import io.restassured.specification.LogSpecification;
+import io.restassured.specification.RequestSpecification;
+import io.restassured.specification.ResponseSpecification;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 import org.junit.Before;
 
 public class TestConfig {
@@ -15,6 +27,9 @@ public class TestConfig {
     protected static String comments;
     protected static String albums;
     protected static String photos;
+
+    protected RequestSpecification requestSpec;
+    protected ResponseSpecification responseSpec;
 
     @Before
     public void setup() throws IOException {
@@ -28,6 +43,8 @@ public class TestConfig {
         albums = "/albums";
         photos = "/photos";
         apiToken = getApiToken();
+        requestSpec = getRequestSpecification();
+        responseSpec = getResponseSpecification();
     }
 
     private String getApiToken() throws IOException {
@@ -37,5 +54,26 @@ public class TestConfig {
         Properties prop = new Properties();
         prop.load(inputStream);
         return prop.getProperty("token");
+    }
+
+    private RequestSpecification getRequestSpecification() {
+        RequestSpecBuilder builder = new RequestSpecBuilder();
+        builder.addHeader("my-custom-header", "my-custom-header-value");
+        builder.setAccept(ContentType.JSON);
+        builder.setAuth(RestAssured.oauth2(apiToken));
+        builder.log(LogDetail.HEADERS);
+        return builder.build();
+    }
+
+    private ResponseSpecification getResponseSpecification() {
+        ResponseSpecBuilder builder = new ResponseSpecBuilder();
+        builder.expectContentType(ContentType.JSON);
+        builder.expectStatusCode(200);
+        builder.expectBody("_meta.success", is(true));
+        builder.expectBody("_meta.code", is(200));
+        builder.expectBody("_meta.message", is("OK. Everything worked as expected."));
+        builder.log(LogDetail.BODY);
+        builder.expectResponseTime(lessThan(2L), TimeUnit.SECONDS);
+        return builder.build();
     }
 }
