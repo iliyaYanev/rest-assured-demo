@@ -3,7 +3,6 @@ import static org.hamcrest.Matchers.equalTo;
 
 import dao.BaseResponse;
 import dao.CreateUser;
-import dao.User;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;

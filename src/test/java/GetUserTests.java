@@ -89,7 +89,7 @@ public class GetUserTests extends TestConfig {
             .log()
             .ifValidationFails(LogDetail.BODY)
         .and()
-            .body("result.findAll {it.first_name.equals('Wilford')}.email", hasItem("kshlerin.ezekiel@example.org"));
+            .body("result.findAll {it.first_name.equals('Stephan')}.email", hasItem("ygottlieb@example.com"));
     }
 
     @Test
