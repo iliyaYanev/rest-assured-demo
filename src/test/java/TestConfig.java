@@ -7,6 +7,7 @@ import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.filter.log.ErrorLoggingFilter;
 import io.restassured.filter.log.LogDetail;
 import io.restassured.http.ContentType;
+import io.restassured.parsing.Parser;
 import io.restassured.path.json.JsonPath;
 import io.restassured.path.json.config.JsonPathConfig;
 import io.restassured.specification.RequestSpecification;
@@ -34,6 +35,7 @@ public class TestConfig {
     public void setup() throws IOException {
         RestAssured.baseURI = "https://gorest.co.in/public-api";
         JsonPath.config = new JsonPathConfig("UTF-8");
+        RestAssured.defaultParser = Parser.JSON;
 
         users = "/users";
         usersById = "/users/{userId}";
