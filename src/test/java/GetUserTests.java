@@ -129,7 +129,7 @@ public class GetUserTests extends TestConfig {
         .and()
             .statusCode(200)
         .and()
-            .body("results.findAll { !it.first_name.equals('John') }", hasSize(0));
+            .body("results.findAll { !it.first_name.equals('Wilford') }", hasSize(0));
     }
 
     @Test
