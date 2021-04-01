@@ -1,560 +1,750 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "http://example.com/example.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "The Root Schema",
-  "description": "The root schema comprises the entire JSON document.",
-  "default": {},
-  "additionalProperties": true,
-  "required": [
-    "_meta",
-    "result"
-  ],
   "properties": {
-    "_meta": {
-      "$id": "#/properties/_meta",
-      "type": "object",
-      "title": "The _meta Schema",
-      "description": "An explanation about the purpose of this instance.",
-      "default": {},
-      "examples": [
-        {
-          "pageCount": 108.0,
-          "rateLimit": {
-            "limit": 30.0,
-            "remaining": 29.0,
-            "reset": 2.0
-          },
-          "code": 200.0,
-          "currentPage": 1.0,
-          "message": "OK. Everything worked as expected.",
-          "totalCount": 2151.0,
-          "perPage": 20.0,
-          "success": true
-        }
-      ],
-      "additionalProperties": true,
-      "required": [
-        "success",
-        "code",
-        "message",
-        "totalCount",
-        "pageCount",
-        "currentPage",
-        "perPage",
-        "rateLimit"
-      ],
-      "properties": {
-        "success": {
-          "$id": "#/properties/_meta/properties/success",
-          "type": "boolean",
-          "title": "The Success Schema",
-          "description": "An explanation about the purpose of this instance.",
-          "default": false,
-          "examples": [
-            true
-          ]
-        },
-        "code": {
-          "$id": "#/properties/_meta/properties/code",
-          "type": "integer",
-          "title": "The Code Schema",
-          "description": "An explanation about the purpose of this instance.",
-          "default": 0,
-          "examples": [
-            200.0
-          ]
-        },
-        "message": {
-          "$id": "#/properties/_meta/properties/message",
-          "type": "string",
-          "title": "The Message Schema",
-          "description": "An explanation about the purpose of this instance.",
-          "default": "",
-          "examples": [
-            "OK. Everything worked as expected."
-          ]
-        },
-        "totalCount": {
-          "$id": "#/properties/_meta/properties/totalCount",
-          "type": "integer",
-          "title": "The Totalcount Schema",
-          "description": "An explanation about the purpose of this instance.",
-          "default": 0,
-          "examples": [
-            2151.0
-          ]
-        },
-        "pageCount": {
-          "$id": "#/properties/_meta/properties/pageCount",
-          "type": "integer",
-          "title": "The Pagecount Schema",
-          "description": "An explanation about the purpose of this instance.",
-          "default": 0,
-          "examples": [
-            108.0
-          ]
-        },
-        "currentPage": {
-          "$id": "#/properties/_meta/properties/currentPage",
-          "type": "integer",
-          "title": "The Currentpage Schema",
-          "description": "An explanation about the purpose of this instance.",
-          "default": 0,
-          "examples": [
-            1.0
-          ]
-        },
-        "perPage": {
-          "$id": "#/properties/_meta/properties/perPage",
-          "type": "integer",
-          "title": "The Perpage Schema",
-          "description": "An explanation about the purpose of this instance.",
-          "default": 0,
-          "examples": [
-            20.0
-          ]
-        },
-        "rateLimit": {
-          "$id": "#/properties/_meta/properties/rateLimit",
-          "type": "object",
-          "title": "The Ratelimit Schema",
-          "description": "An explanation about the purpose of this instance.",
-          "default": {},
-          "examples": [
-            {
-              "remaining": 29.0,
-              "reset": 2.0,
-              "limit": 30.0
-            }
-          ],
-          "additionalProperties": true,
-          "required": [
-            "limit",
-            "remaining",
-            "reset"
-          ],
-          "properties": {
-            "limit": {
-              "$id": "#/properties/_meta/properties/rateLimit/properties/limit",
-              "type": "integer",
-              "title": "The Limit Schema",
-              "description": "An explanation about the purpose of this instance.",
-              "default": 0,
-              "examples": [
-                30.0
-              ]
-            },
-            "remaining": {
-              "$id": "#/properties/_meta/properties/rateLimit/properties/remaining",
-              "type": "integer",
-              "title": "The Remaining Schema",
-              "description": "An explanation about the purpose of this instance.",
-              "default": 0,
-              "examples": [
-                29.0
-              ]
-            },
-            "reset": {
-              "$id": "#/properties/_meta/properties/rateLimit/properties/reset",
-              "type": "integer",
-              "title": "The Reset Schema",
-              "description": "An explanation about the purpose of this instance.",
-              "default": 0,
-              "examples": [
-                2.0
-              ]
-            }
-          }
-        }
-      }
+    "code": {
+      "type": "integer"
     },
-    "result": {
-      "$id": "#/properties/result",
-      "type": "array",
-      "title": "The Result Schema",
-      "description": "An explanation about the purpose of this instance.",
-      "default": [],
-      "examples": [
-        [
-          {
-            "address": "24851 Alexie Haven\nBotsfordtown, OH 53300-8624",
-            "phone": "215-754-0837",
-            "website": "http://www.jenkins.info/autem-fuga-est-dolores-quis-ut-enim",
-            "last_name": "Singh",
-            "gender": "male",
-            "email": "gaurav1234@gmail.com",
-            "status": "active",
-            "dob": "1986-06-04",
-            "id": "777",
-            "_links": {
-              "avatar": {
-                "href": "https://lorempixel.com/250/250/people/?88264"
-              },
-              "self": {
-                "href": "https://gorest.co.in/public-api/users/777"
-              },
-              "edit": {
-                "href": "https://gorest.co.in/public-api/users/777"
-              }
+    "meta": {
+      "type": "object",
+      "properties": {
+        "pagination": {
+          "type": "object",
+          "properties": {
+            "total": {
+              "type": "integer"
             },
-            "first_name": "Gaurav"
-          },
-          {
-            "dob": "2003-06-12",
-            "id": "778",
-            "_links": {
-              "avatar": {
-                "href": "https://lorempixel.com/250/250/people/?92183"
-              },
-              "self": {
-                "href": "https://gorest.co.in/public-api/users/778"
-              },
-              "edit": {
-                "href": "https://gorest.co.in/public-api/users/778"
-              }
+            "pages": {
+              "type": "integer"
             },
-            "first_name": "Bhuvi",
-            "address": "62123 Roberts Path Suite 597\nJodieview, NH 47806",
-            "phone": "1-960-591-7711 x3109",
-            "website": "http://www.schamberger.com/",
-            "last_name": "Kumar",
-            "gender": "male",
-            "email": "Bhuvi@gmail.com",
-            "status": "active"
-          },
-          {
-            "gender": "female",
-            "status": "active",
-            "email": "hola@abv.tv",
-            "id": "779",
-            "dob": "1980-11-22",
-            "_links": {
-              "self": {
-                "href": "https://gorest.co.in/public-api/users/779"
-              },
-              "edit": {
-                "href": "https://gorest.co.in/public-api/users/779"
-              },
-              "avatar": {
-                "href": "https://lorempixel.com/250/250/people/?86361"
-              }
+            "page": {
+              "type": "integer"
             },
-            "first_name": "hrihri",
-            "phone": "649-559-1568",
-            "address": "37275 Braun Keys\nNorth Bretfurt, NH 34621-5418",
-            "website": "http://okeefe.com/hic-omnis-nam-voluptas-voluptates",
-            "last_name": "apo"
-          }
-        ]
-      ],
-      "additionalItems": true,
-      "items": {
-        "$id": "#/properties/result/items",
-        "type": "object",
-        "title": "The Items Schema",
-        "description": "An explanation about the purpose of this instance.",
-        "default": {},
-        "examples": [
-          {
-            "dob": "1986-06-04",
-            "id": "777",
-            "first_name": "Gaurav",
-            "_links": {
-              "avatar": {
-                "href": "https://lorempixel.com/250/250/people/?88264"
-              },
-              "self": {
-                "href": "https://gorest.co.in/public-api/users/777"
-              },
-              "edit": {
-                "href": "https://gorest.co.in/public-api/users/777"
-              }
-            },
-            "address": "24851 Alexie Haven\nBotsfordtown, OH 53300-8624",
-            "phone": "215-754-0837",
-            "website": "http://www.jenkins.info/autem-fuga-est-dolores-quis-ut-enim",
-            "last_name": "Singh",
-            "gender": "male",
-            "email": "gaurav1234@gmail.com",
-            "status": "active"
-          },
-          {
-            "address": "62123 Roberts Path Suite 597\nJodieview, NH 47806",
-            "phone": "1-960-591-7711 x3109",
-            "website": "http://www.schamberger.com/",
-            "last_name": "Kumar",
-            "gender": "male",
-            "email": "Bhuvi@gmail.com",
-            "status": "active",
-            "dob": "2003-06-12",
-            "id": "778",
-            "first_name": "Bhuvi",
-            "_links": {
-              "avatar": {
-                "href": "https://lorempixel.com/250/250/people/?92183"
-              },
-              "self": {
-                "href": "https://gorest.co.in/public-api/users/778"
-              },
-              "edit": {
-                "href": "https://gorest.co.in/public-api/users/778"
-              }
+            "limit": {
+              "type": "integer"
             }
           },
-          {
-            "dob": "1980-11-22",
-            "id": "779",
-            "_links": {
-              "avatar": {
-                "href": "https://lorempixel.com/250/250/people/?86361"
-              },
-              "self": {
-                "href": "https://gorest.co.in/public-api/users/779"
-              },
-              "edit": {
-                "href": "https://gorest.co.in/public-api/users/779"
-              }
-            },
-            "first_name": "hrihri",
-            "phone": "649-559-1568",
-            "address": "37275 Braun Keys\nNorth Bretfurt, NH 34621-5418",
-            "website": "http://okeefe.com/hic-omnis-nam-voluptas-voluptates",
-            "last_name": "apo",
-            "gender": "female",
-            "status": "active",
-            "email": "hola@abv.tv"
-          }
-        ],
-        "additionalProperties": true,
-        "required": [
-          "id",
-          "first_name",
-          "last_name",
-          "gender",
-          "dob",
-          "email",
-          "phone",
-          "website",
-          "address",
-          "status",
-          "_links"
-        ],
-        "properties": {
-          "id": {
-            "$id": "#/properties/result/items/properties/id",
-            "type": "string",
-            "title": "The Id Schema",
-            "description": "An explanation about the purpose of this instance.",
-            "default": "",
-            "examples": [
-              "777"
-            ]
-          },
-          "first_name": {
-            "$id": "#/properties/result/items/properties/first_name",
-            "type": "string",
-            "title": "The First_name Schema",
-            "description": "An explanation about the purpose of this instance.",
-            "default": "",
-            "examples": [
-              "Gaurav"
-            ]
-          },
-          "last_name": {
-            "$id": "#/properties/result/items/properties/last_name",
-            "type": "string",
-            "title": "The Last_name Schema",
-            "description": "An explanation about the purpose of this instance.",
-            "default": "",
-            "examples": [
-              "Singh"
-            ]
-          },
-          "gender": {
-            "$id": "#/properties/result/items/properties/gender",
-            "type": "string",
-            "title": "The Gender Schema",
-            "description": "An explanation about the purpose of this instance.",
-            "default": "",
-            "examples": [
-              "male"
-            ]
-          },
-          "dob": {
-            "$id": "#/properties/result/items/properties/dob",
-            "type": "string",
-            "title": "The Dob Schema",
-            "description": "An explanation about the purpose of this instance.",
-            "default": "",
-            "examples": [
-              "1986-06-04"
-            ]
-          },
-          "email": {
-            "$id": "#/properties/result/items/properties/email",
-            "type": "string",
-            "title": "The Email Schema",
-            "description": "An explanation about the purpose of this instance.",
-            "default": "",
-            "examples": [
-              "gaurav1234@gmail.com"
-            ]
-          },
-          "phone": {
-            "$id": "#/properties/result/items/properties/phone",
-            "type": "string",
-            "title": "The Phone Schema",
-            "description": "An explanation about the purpose of this instance.",
-            "default": "",
-            "examples": [
-              "215-754-0837"
-            ]
-          },
-          "website": {
-            "$id": "#/properties/result/items/properties/website",
-            "type": "string",
-            "title": "The Website Schema",
-            "description": "An explanation about the purpose of this instance.",
-            "default": "",
-            "examples": [
-              "http://www.jenkins.info/autem-fuga-est-dolores-quis-ut-enim"
-            ]
-          },
-          "address": {
-            "$id": "#/properties/result/items/properties/address",
-            "type": "string",
-            "title": "The Address Schema",
-            "description": "An explanation about the purpose of this instance.",
-            "default": "",
-            "examples": [
-              "24851 Alexie Haven\nBotsfordtown, OH 53300-8624"
-            ]
-          },
-          "status": {
-            "$id": "#/properties/result/items/properties/status",
-            "type": "string",
-            "title": "The Status Schema",
-            "description": "An explanation about the purpose of this instance.",
-            "default": "",
-            "examples": [
-              "active"
-            ]
-          },
-          "_links": {
-            "$id": "#/properties/result/items/properties/_links",
-            "type": "object",
-            "title": "The _links Schema",
-            "description": "An explanation about the purpose of this instance.",
-            "default": {},
-            "examples": [
-              {
-                "self": {
-                  "href": "https://gorest.co.in/public-api/users/777"
-                },
-                "edit": {
-                  "href": "https://gorest.co.in/public-api/users/777"
-                },
-                "avatar": {
-                  "href": "https://lorempixel.com/250/250/people/?88264"
-                }
-              }
-            ],
-            "additionalProperties": true,
-            "required": [
-              "self",
-              "edit",
-              "avatar"
-            ],
-            "properties": {
-              "self": {
-                "$id": "#/properties/result/items/properties/_links/properties/self",
-                "type": "object",
-                "title": "The Self Schema",
-                "description": "An explanation about the purpose of this instance.",
-                "default": {},
-                "examples": [
-                  {
-                    "href": "https://gorest.co.in/public-api/users/777"
-                  }
-                ],
-                "additionalProperties": true,
-                "required": [
-                  "href"
-                ],
-                "properties": {
-                  "href": {
-                    "$id": "#/properties/result/items/properties/_links/properties/self/properties/href",
-                    "type": "string",
-                    "title": "The Href Schema",
-                    "description": "An explanation about the purpose of this instance.",
-                    "default": "",
-                    "examples": [
-                      "https://gorest.co.in/public-api/users/777"
-                    ]
-                  }
-                }
-              },
-              "edit": {
-                "$id": "#/properties/result/items/properties/_links/properties/edit",
-                "type": "object",
-                "title": "The Edit Schema",
-                "description": "An explanation about the purpose of this instance.",
-                "default": {},
-                "examples": [
-                  {
-                    "href": "https://gorest.co.in/public-api/users/777"
-                  }
-                ],
-                "additionalProperties": true,
-                "required": [
-                  "href"
-                ],
-                "properties": {
-                  "href": {
-                    "$id": "#/properties/result/items/properties/_links/properties/edit/properties/href",
-                    "type": "string",
-                    "title": "The Href Schema",
-                    "description": "An explanation about the purpose of this instance.",
-                    "default": "",
-                    "examples": [
-                      "https://gorest.co.in/public-api/users/777"
-                    ]
-                  }
-                }
-              },
-              "avatar": {
-                "$id": "#/properties/result/items/properties/_links/properties/avatar",
-                "type": "object",
-                "title": "The Avatar Schema",
-                "description": "An explanation about the purpose of this instance.",
-                "default": {},
-                "examples": [
-                  {
-                    "href": "https://lorempixel.com/250/250/people/?88264"
-                  }
-                ],
-                "additionalProperties": true,
-                "required": [
-                  "href"
-                ],
-                "properties": {
-                  "href": {
-                    "$id": "#/properties/result/items/properties/_links/properties/avatar/properties/href",
-                    "type": "string",
-                    "title": "The Href Schema",
-                    "description": "An explanation about the purpose of this instance.",
-                    "default": "",
-                    "examples": [
-                      "https://lorempixel.com/250/250/people/?88264"
-                    ]
-                  }
-                }
-              }
-            }
-          }
+          "required": [
+            "total",
+            "pages",
+            "page",
+            "limit"
+          ]
         }
-      }
+      },
+      "required": [
+        "pagination"
+      ]
+    },
+    "data": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "gender": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name",
+            "email",
+            "gender",
+            "status",
+            "created_at",
+            "updated_at"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "gender": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name",
+            "email",
+            "gender",
+            "status",
+            "created_at",
+            "updated_at"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "gender": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name",
+            "email",
+            "gender",
+            "status",
+            "created_at",
+            "updated_at"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "gender": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name",
+            "email",
+            "gender",
+            "status",
+            "created_at",
+            "updated_at"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "gender": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name",
+            "email",
+            "gender",
+            "status",
+            "created_at",
+            "updated_at"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "gender": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name",
+            "email",
+            "gender",
+            "status",
+            "created_at",
+            "updated_at"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "gender": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name",
+            "email",
+            "gender",
+            "status",
+            "created_at",
+            "updated_at"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "gender": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name",
+            "email",
+            "gender",
+            "status",
+            "created_at",
+            "updated_at"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "gender": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name",
+            "email",
+            "gender",
+            "status",
+            "created_at",
+            "updated_at"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "gender": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name",
+            "email",
+            "gender",
+            "status",
+            "created_at",
+            "updated_at"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "gender": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name",
+            "email",
+            "gender",
+            "status",
+            "created_at",
+            "updated_at"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "gender": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name",
+            "email",
+            "gender",
+            "status",
+            "created_at",
+            "updated_at"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "gender": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name",
+            "email",
+            "gender",
+            "status",
+            "created_at",
+            "updated_at"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "gender": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name",
+            "email",
+            "gender",
+            "status",
+            "created_at",
+            "updated_at"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "gender": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name",
+            "email",
+            "gender",
+            "status",
+            "created_at",
+            "updated_at"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "gender": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name",
+            "email",
+            "gender",
+            "status",
+            "created_at",
+            "updated_at"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "gender": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name",
+            "email",
+            "gender",
+            "status",
+            "created_at",
+            "updated_at"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "gender": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name",
+            "email",
+            "gender",
+            "status",
+            "created_at",
+            "updated_at"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "gender": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name",
+            "email",
+            "gender",
+            "status",
+            "created_at",
+            "updated_at"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "gender": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name",
+            "email",
+            "gender",
+            "status",
+            "created_at",
+            "updated_at"
+          ]
+        }
+      ]
     }
-  }
+  },
+  "required": [
+    "code",
+    "meta",
+    "data"
+  ]
 }

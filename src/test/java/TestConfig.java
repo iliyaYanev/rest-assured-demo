@@ -1,4 +1,3 @@
-import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.lessThan;
 
 import io.restassured.RestAssured;
@@ -16,7 +15,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
-import org.junit.Before;
+import org.junit.jupiter.api.BeforeEach;
 
 public class TestConfig {
 
@@ -31,7 +30,7 @@ public class TestConfig {
     protected RequestSpecification requestSpec;
     protected ResponseSpecification responseOkSpec;
 
-    @Before
+    @BeforeEach
     public void setup() throws IOException {
         RestAssured.baseURI = "https://gorest.co.in/public-api";
         JsonPath.config = new JsonPathConfig("UTF-8");
@@ -71,9 +70,6 @@ public class TestConfig {
         ResponseSpecBuilder builder = new ResponseSpecBuilder();
         builder.expectContentType(ContentType.JSON);
         builder.expectStatusCode(200);
-        builder.expectBody("_meta.success", is(true));
-        builder.expectBody("_meta.code", is(200));
-        builder.expectBody("_meta.message", is("OK. Everything worked as expected."));
         builder.expectResponseTime(lessThan(2L), TimeUnit.SECONDS);
         builder.log(LogDetail.BODY);
         return builder.build();

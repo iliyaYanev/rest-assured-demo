@@ -1,29 +1,34 @@
 package dao;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 public class BaseResponse {
+    private Integer code;
     private MetaInformation meta;
-    private User result;
+    private User data;
 
     public BaseResponse() {
     }
 
-    @JsonProperty("_meta")
+    public Integer getCode() {
+        return code;
+    }
+
+    public void setCode(Integer code) {
+        this.code = code;
+    }
+
     public MetaInformation getMeta() {
         return meta;
     }
 
-    @JsonProperty("_meta")
     public void setMeta(MetaInformation meta) {
         this.meta = meta;
     }
 
-    public User getResult() {
-        return result;
+    public User getData() {
+        return data;
     }
 
-    public void setResult(User result) {
-        this.result = result;
+    public void setData(User data) {
+        this.data = data;
     }
 }

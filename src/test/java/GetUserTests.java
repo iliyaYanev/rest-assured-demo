@@ -8,7 +8,8 @@ import static org.hamcrest.Matchers.hasSize;
 import io.restassured.filter.log.LogDetail;
 import io.restassured.http.ContentType;
 import java.io.File;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
 
 public class GetUserTests extends TestConfig {
 
@@ -28,8 +29,8 @@ public class GetUserTests extends TestConfig {
         .then()
             .statusCode(200)
         .and()
-            .rootPath("result")
-            .body("status", equalTo(401))
+            .rootPath("data")
+            .body("code", equalTo(401))
             .body("name", equalTo("Unauthorized"))
         .and()
             .log()
@@ -38,24 +39,25 @@ public class GetUserTests extends TestConfig {
 
     @Test
     public void getUserOAuth() {
-        String userId = "123";
+        String userId = "125155161616";
 
         given()
             .accept(ContentType.JSON)
         .and()
             .auth()
             .oauth2(apiToken)
+        .and()
+            .pathParam("userId", userId)
         .when()
-            .get(users.concat("/").concat(userId))
+            .get(usersById)
         .then()
             .log()
             .all()
         .and()
             .statusCode(200)
         .and()
-            .rootPath("result")
-            .body("status", equalTo(404))
-            .body("message", equalTo("Object not found: 123"));
+            .body("code", equalTo(404))
+            .body("data.message", equalTo("Resource not found"));
     }
 
     @Test
@@ -71,9 +73,10 @@ public class GetUserTests extends TestConfig {
         .then()
             .statusCode(200)
         .and()
-            .rootPath("result")
-            .body("status", equalTo(401))
-            .body("message", equalTo("Your request was made with invalid credentials."));
+            .body("code", equalTo(401))
+            .body("message", equalTo("Your request was made with invalid credentials."))
+        .log()
+        .body();
     }
 
     @Test
@@ -89,7 +92,7 @@ public class GetUserTests extends TestConfig {
             .log()
             .ifValidationFails(LogDetail.BODY)
         .and()
-            .body("result.findAll {it.first_name.equals('Stephan')}.email", hasItem("ygottlieb@example.com"));
+            .body("data.findAll {it.name.equals('sameercpu')}.email", hasItem("sameercpu@gmail.com"));
     }
 
     @Test
@@ -120,7 +123,7 @@ public class GetUserTests extends TestConfig {
             .auth()
             .oauth2(apiToken)
         .and()
-            .param("first_name", "Wilford")
+            .param("name", "Wilford")
         .when()
             .get(users)
         .then()
@@ -129,7 +132,7 @@ public class GetUserTests extends TestConfig {
         .and()
             .statusCode(200)
         .and()
-            .body("results.findAll { !it.first_name.equals('Wilford') }", hasSize(0));
+            .body("data.findAll { !it.name.equals('Wilford') }", hasSize(0));
     }
 
     @Test
@@ -151,7 +154,7 @@ public class GetUserTests extends TestConfig {
         .and()
             .statusCode(200)
         .and()
-            .body("result.first_name", equalTo("Jacynthe"));
+            .body("data.name", equalTo("Karunanidhi Verma"));
     }
 
     @Test

@@ -9,7 +9,8 @@ import io.restassured.response.Response;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
 
 public class CreateUserTests extends TestConfig {
 
@@ -33,17 +34,15 @@ public class CreateUserTests extends TestConfig {
                 .log()
                 .body()
             .and()
-                .body("_meta.code", equalTo(201))
+                .body("code", equalTo(201))
             .extract();
 
-        JsonPath responseJsonPath = new JsonPath(response.getBody().asString()).setRootPath("result");
+        JsonPath responseJsonPath = new JsonPath(response.getBody().asString()).setRootPath("data");
         String id = responseJsonPath.getString("id");
 
         JsonPath requestJsonPath = new JsonPath(userJson);
-        String expectedFirstName = requestJsonPath.getString("first_name");
-        String expectedLastName = requestJsonPath.getString("last_name");
+        String expectedName = requestJsonPath.getString("name");
         String expectedGender = requestJsonPath.getString("gender");
-        String expectedDob = requestJsonPath.getString("dob");
 
         System.out.println(id);
 
@@ -61,21 +60,35 @@ public class CreateUserTests extends TestConfig {
             .log()
             .body()
         .and()
-            .rootPath("result")
-            .body("first_name", equalTo(expectedFirstName))
-            .body("last_name", equalTo(expectedLastName))
-            .body("gender", equalTo(expectedGender))
-            .body("dob", equalTo(expectedDob));
+            .rootPath("data")
+            .body("name", equalTo(expectedName))
+            .body("gender", equalTo(expectedGender));
+
+        //Delete the created user
+        given()
+            .accept(ContentType.JSON)
+        .and()
+            .auth()
+            .oauth2(apiToken)
+        .and()
+            .pathParam("userId",id)
+        .when()
+            .delete(usersById)
+        .then()
+            .log()
+            .body()
+        .and()
+            .body("code", equalTo(204));
 
     }
 
     @Test
     public void createUserDeserializeResponse() {
         CreateUser createUser = new CreateUser();
-        createUser.setFirstName("Iliya");
-        createUser.setLastName("Yanev");
-        createUser.setGender("male");
-        createUser.setEmail("randomemail@email.com");
+        createUser.setName("Iliya Yanev");
+        createUser.setGender("Male");
+        createUser.setStatus("Active");
+        createUser.setEmail("myRandomEmail@email.com");
 
         BaseResponse response = given()
             .contentType(ContentType.JSON)
@@ -90,11 +103,14 @@ public class CreateUserTests extends TestConfig {
                 .log()
                 .body()
             .and()
-                .body("_meta.code", equalTo(201))
+                .body("code", equalTo(201))
             .extract()
             .as(BaseResponse.class);
 
-        assert createUser.getFirstName().equals(response.getResult().getFirstName());
-        assert createUser.getLastName().equals(response.getResult().getLastName());
+        assert response.getData().getName().equals(createUser.getName());
+        assert response.getData().getGender().equals(createUser.getGender());
+        assert response.getData().getStatus().equals(createUser.getStatus());
+        assert response.getData().getEmail().equals(createUser.getEmail());
+
     }
 }

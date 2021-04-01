@@ -1,37 +1,30 @@
 package dao;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.time.Instant;
 
 public class User {
 
     private String id;
-    private String firstName;
-    private String lastName;
+    private String name;
     private String gender;
-    private String dob;
     private String email;
-    private String phone;
-    private String website;
-    private String address;
-    private Status status;
-    private Resources links;
+    private String status;
+    private String createdAt;
+    private String updatedAt;
 
     public User() {
-
     }
 
-    public User(String firstName, String lastName, String gender, String dob, String email,
-        String phone, String website, String address, Status status, Resources links) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public User(String id, String name, String gender, String email, String status, String createdAt, String updatedAt) {
+        this.id = id;
+        this.name = name;
         this.gender = gender;
-        this.dob = dob;
         this.email = email;
-        this.phone = phone;
-        this.website = website;
-        this.address = address;
         this.status = status;
-        this.links = links;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+
     }
 
     public String getId() {
@@ -42,24 +35,12 @@ public class User {
         this.id = id;
     }
 
-    @JsonProperty("first_name")
-    public String getFirstName() {
-        return firstName;
+    public String getName() {
+        return name;
     }
 
-    @JsonProperty("first_name")
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    @JsonProperty("last_name")
-    public String getLastName() {
-        return lastName;
-    }
-
-    @JsonProperty("last_name")
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getGender() {
@@ -78,53 +59,29 @@ public class User {
         this.email = email;
     }
 
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getWebsite() {
-        return website;
-    }
-
-    public void setWebsite(String website) {
-        this.website = website;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public Status getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(Status status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
-    @JsonProperty("_links")
-    public Resources getLinks() {
-        return links;
+    public String getCreatedAt() {
+        return createdAt;
     }
 
-    @JsonProperty("_links")
-    public void setLinks(Resources links) {
-        this.links = links;
+    @JsonProperty("created_at")
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public String getDob() {
-        return dob;
+    public String getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setDob(String dob) {
-        this.dob = dob;
+    @JsonProperty("updated_at")
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
     }
 }
