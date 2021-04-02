@@ -1,276 +1,0 @@
-{
-    "code": 200,
-    "meta": {
-        "pagination": {
-            "total": 1340,
-            "pages": 67,
-            "page": 1,
-            "limit": 20
-
-        }
-    },
-    "data": [
-
-        {
-            "id": 5,
--            "name": "The Hon. Bhushan Iyer",
-C            "email": "bhushan_the_iyer_hon@collier-vonrueden.org",
-            "gender": "Male",
-"            "status": "Inactive",
-;            "created_at": "2021-04-01T03:50:03.922+05:30",
-:            "updated_at": "2021-04-01T03:50:03.922+05:30"
-        },
-
-        {
-            "id": 7,
-(            "name": "Ekaksh Varma DVM",
-4            "email": "dvm_varma_ekaksh@stanton.io",
-             "gender": "Female",
-"            "status": "Inactive",
-;            "created_at": "2021-04-01T03:50:03.956+05:30",
-:            "updated_at": "2021-04-01T03:50:03.956+05:30"
-        },
-
-        {
-            "id": 12,
-,            "name": "Baalagopaal Mehrotra",
-9            "email": "baalagopaal_mehrotra@wiegand.biz",
-            "gender": "Male",
-             "status": "Active",
-;            "created_at": "2021-04-01T03:50:04.044+05:30",
-:            "updated_at": "2021-04-01T03:50:04.044+05:30"
-        },
-
-        {
-            "id": 26,
-7            "name": "Washington Luis Cabral da Silva",
-,            "email": "wluissilva@live.com",
-            "gender": "Male",
-             "status": "Active",
-;            "created_at": "2021-04-01T03:50:04.245+05:30",
-:            "updated_at": "2021-04-01T08:32:45.626+05:30"
-        },
-
-        {
-            "id": 27,
--            "name": "Rita Bandopadhyay III",
-8            "email": "bandopadhyay_iii_rita@yundt.net",
-             "gender": "Female",
-             "status": "Active",
-;            "created_at": "2021-04-01T03:50:04.250+05:30",
-:            "updated_at": "2021-04-01T03:50:04.250+05:30"
-        },
-
-        {
-            "id": 28,
-%            "name": "Adhrit Khanna",
-7            "email": "khanna_adhrit@nolan-corwin.biz",
-            "gender": "Male",
-             "status": "Active",
-;            "created_at": "2021-04-01T03:50:04.271+05:30",
-:            "updated_at": "2021-04-01T03:50:04.271+05:30"
-        },
-
-        {
-            "id": 32,
-"            "name": "Indra Kaur",
-,            "email": "kaur_indra@rau.info",
-             "gender": "Female",
-"            "status": "Inactive",
-;            "created_at": "2021-04-01T03:50:04.342+05:30",
-:            "updated_at": "2021-04-01T03:50:04.342+05:30"
-        },
-
-        {
-            "id": 33,
-"            "name": "Guru Pilla",
-6            "email": "guru_pilla@bergstrom-roob.com",
-            "gender": "Male",
-             "status": "Active",
-;            "created_at": "2021-04-01T03:50:04.354+05:30",
-:            "updated_at": "2021-04-01T03:50:04.354+05:30"
-        },
-
-        {
-            "id": 34,
-)            "name": "Pres. Shashi Naik",
-4            "email": "pres_shashi_naik@morar.name",
-             "gender": "Female",
-"            "status": "Inactive",
-;            "created_at": "2021-04-01T03:50:04.374+05:30",
-:            "updated_at": "2021-04-01T03:50:04.374+05:30"
-        },
-
-        {
-            "id": 35,
-(            "name": "Trilochan Tandon",
-=            "email": "tandon_trilochan@wintheiser-howe.biz",
-            "gender": "Male",
-             "status": "Active",
-;            "created_at": "2021-04-01T03:50:04.397+05:30",
-:            "updated_at": "2021-04-01T03:50:04.397+05:30"
-        },
-
-        {
-            "id": 36,
-0            "name": "Mr. Yogesh Chattopadhyay",
-A            "email": "chattopadhyay_yogesh_mr@mcglynn-boyer.io",
-             "gender": "Female",
-"            "status": "Inactive",
-;            "created_at": "2021-04-01T03:50:04.409+05:30",
-:            "updated_at": "2021-04-01T03:50:04.409+05:30"
-        },
-
-        {
-            "id": 37,
-,            "name": "Atmaja Chattopadhyay",
-:            "email": "chattopadhyay_atmaja@ullrich.info",
-            "gender": "Male",
-"            "status": "Inactive",
-;            "created_at": "2021-04-01T03:50:04.423+05:30",
-:            "updated_at": "2021-04-01T03:50:04.423+05:30"
-        },
-
-        {
-            "id": 38,
-&            "name": "Sloka Gandhi I",
-4            "email": "gandhi_sloka_i@ondricka.com",
-            "gender": "Male",
-             "status": "Active",
-;            "created_at": "2021-04-01T03:50:04.448+05:30",
-:            "updated_at": "2021-04-01T03:50:04.448+05:30"
-        },
-
-        {
-            "id": 39,
-.            "name": "Rep. Aanjaneya Varrier",
-9            "email": "varrier_aanjaneya_rep@murphy.biz",
-            "gender": "Male",
-             "status": "Active",
-;            "created_at": "2021-04-01T03:50:04.457+05:30",
-:            "updated_at": "2021-04-01T03:50:04.457+05:30"
-        },
-
-        {
-            "id": 40,
-'            "name": "Sonja Dickinson",
-2            "email": "Marvin_Ullrich5@gmail.com",
-             "gender": "Female",
-             "status": "Active",
-;            "created_at": "2021-04-01T03:50:04.479+05:30",
-:            "updated_at": "2021-04-01T08:32:52.896+05:30"
-        },
-
-        {
-            "id": 41,
-.            "name": "Ms. Preity Namboothiri",
-<            "email": "ms_namboothiri_preity@schneider.net",
-            "gender": "Male",
-"            "status": "Inactive",
-;            "created_at": "2021-04-01T03:50:04.493+05:30",
-:            "updated_at": "2021-04-01T03:50:04.493+05:30"
-        },
-
-        {
-            "id": 42,
-&            "name": "Rajinder Johar",
-3            "email": "rajinder_johar@wuckert.com",
-            "gender": "Male",
-             "status": "Active",
-;            "created_at": "2021-04-01T03:50:04.504+05:30",
-:            "updated_at": "2021-04-01T03:50:04.504+05:30"
-        },
-
-        {
-            "id": 43,
-(            "name": "Gorakhnath Pilla",
-4            "email": "pilla_gorakhnath@schoen.net",
-            "gender": "Male",
-             "status": "Active",
-;            "created_at": "2021-04-01T03:50:04.530+05:30",
-:            "updated_at": "2021-04-01T03:50:04.530+05:30"
-        },
-
-        {
-            "id": 44,
-%            "name": "Chatura Johar",
-1            "email": "chatura_johar@bernier.io",
-             "gender": "Female",
-             "status": "Active",
-;            "created_at": "2021-04-01T03:50:04.550+05:30",
-:            "updated_at": "2021-04-01T03:50:04.550+05:30"
-        },
-
-        {
-            "id": 45,
-%            "name": "Akshat Kapoor",
-2            "email": "akshat_kapoor@herzog.name",
-             "gender": "Female",
-"            "status": "Inactive",
-;            "created_at": "2021-04-01T03:50:04.588+05:30",
-:            "updated_at": "2021-04-01T03:50:04.588+05:30"
-
-        }
-    ]
-}
-{
-    "code": 200,
-    "meta": null,
-    "data": {
-        "id": 815,
-%        "name": "Karunanidhi Verma",
-7        "email": "karunanidhi_verma@schaden-bins.org",
-        "gender": "Female",
-        "status": "Active",
-7        "created_at": "2021-04-01T03:50:16.678+05:30",
-6        "updated_at": "2021-04-01T03:50:16.678+05:30"
-    }
-}
-HTTP/1.1 200 OK
-Server: nginx
-%Date: Thu, 01 Apr 2021 07:20:12 GMT
-/Content-Type: application/json; charset=utf-8
-Transfer-Encoding: chunked
-Connection: keep-alive
-Vary: Accept-Encoding
-X-Frame-Options: SAMEORIGIN
-!X-XSS-Protection: 1; mode=block
-!X-Content-Type-Options: nosniff
-X-Download-Options: noopen
-)X-Permitted-Cross-Domain-Policies: none
-2Referrer-Policy: strict-origin-when-cross-origin
-,ETag: W/"16d58e13b3d20639b102016d195b8dbb"
-4Cache-Control: max-age=0, private, must-revalidate
-4X-Request-Id: 0b60147f-bb1e-46f1-a917-c9c81ea6e742
-X-Runtime: 0.002159
-@Strict-Transport-Security: max-age=31536000; includeSubDomains
-Vary: Origin
-X-Frame-Options: sameorigin
-"Expect-CT: enforce; max-age=3600
-Content-Encoding: gzip
-
-{
-    "code": 200,
-    "meta": null,
-    "data": {
-        "id": 123,
-9        "name": "jhvjhfyjhgjhjhgjhghpvjh Raaamakrishna",
-6        "email": "fhfghjhdfgh.ramaakrishna@15ce.com",
-        "gender": "Male",
-        "status": "Active",
-7        "created_at": "2021-04-01T03:50:05.965+05:30",
-6        "updated_at": "2021-04-01T11:21:16.896+05:30"
-    }
-}
-Request method:	GET
-4Request URI:	https://gorest.co.in/public-api/posts
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-WHeaders:		Accept=application/json, application/javascript, text/javascript, text/json
-				my_header=my_value
-%Cookies:		my_cookie=my_cookie_value
-Multiparts:		<none>
-Body:			<none>
