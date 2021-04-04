@@ -42,19 +42,13 @@ public class GetUserTests extends TestConfig {
         String userId = "125155161616";
 
         given()
-            .accept(ContentType.JSON)
-        .and()
-            .auth()
-            .oauth2(apiToken)
+            .spec(requestSpec)
         .and()
             .pathParam("userId", userId)
         .when()
             .get(usersById)
         .then()
-            .log()
-            .all()
-        .and()
-            .statusCode(200)
+            .spec(responseOkSpec)
         .and()
             .body("code", equalTo(404))
             .body("data.message", equalTo("Resource not found"));
@@ -82,8 +76,7 @@ public class GetUserTests extends TestConfig {
     @Test
     public void getAllUsersFirstNameWilfordVerifyEmail() {
         given()
-            .auth()
-            .oauth2(apiToken)
+            .spec(requestSpec)
         .when()
             .get(users)
         .then()
@@ -92,7 +85,7 @@ public class GetUserTests extends TestConfig {
             .log()
             .ifValidationFails(LogDetail.BODY)
         .and()
-            .body("data.findAll {it.name.equals('sameercpu')}.email", hasItem("sameercpu@gmail.com"));
+            .body("data.findAll {it.name.equals('Swara Trivedi')}.email", hasItem("trivedi_swara@hermiston.info"));
     }
 
     @Test
@@ -154,7 +147,7 @@ public class GetUserTests extends TestConfig {
         .and()
             .statusCode(200)
         .and()
-            .body("data.name", equalTo("Karunanidhi Verma"));
+            .body("data.name", equalTo("Mrs. Durgeshwari Nambeesan"));
     }
 
     @Test

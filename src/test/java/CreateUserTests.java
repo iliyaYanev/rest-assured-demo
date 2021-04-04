@@ -1,6 +1,7 @@
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
+import com.github.javafaker.Faker;
 import dao.BaseResponse;
 import dao.CreateUser;
 import io.restassured.http.ContentType;
@@ -14,6 +15,7 @@ import org.junit.jupiter.api.Test;
 
 public class CreateUserTests extends TestConfig {
 
+    Faker faker = new Faker();
 
     @Test
     public void createUserExtractResponse() throws IOException {
@@ -85,10 +87,10 @@ public class CreateUserTests extends TestConfig {
     @Test
     public void createUserDeserializeResponse() {
         CreateUser createUser = new CreateUser();
-        createUser.setName("Iliya Yanev");
+        createUser.setName(faker.name().fullName());
         createUser.setGender("Male");
         createUser.setStatus("Active");
-        createUser.setEmail("myRandomEmail@email.com");
+        createUser.setEmail(faker.internet().emailAddress());
 
         BaseResponse response = given()
             .contentType(ContentType.JSON)
