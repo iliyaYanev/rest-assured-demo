@@ -85,7 +85,7 @@ public class GetUserTests extends TestConfig {
             .log()
             .ifValidationFails(LogDetail.BODY)
         .and()
-            .body("data.findAll {it.name.equals('Swara Trivedi')}.email", hasItem("trivedi_swara@hermiston.info"));
+            .body("data.findAll {it.name.equals('Vishwamitra Agarwal')}.email", hasItem("vishwamitra_agarwal@pouros.org"));
     }
 
     @Test
@@ -116,7 +116,7 @@ public class GetUserTests extends TestConfig {
             .auth()
             .oauth2(apiToken)
         .and()
-            .param("name", "Wilford")
+            .param("name", "Swara Trivedi")
         .when()
             .get(users)
         .then()
@@ -125,7 +125,7 @@ public class GetUserTests extends TestConfig {
         .and()
             .statusCode(200)
         .and()
-            .body("data.findAll { !it.name.equals('Wilford') }", hasSize(0));
+            .body("data.findAll { !it.name.equals('Swara Trivedi') }", hasSize(0));
     }
 
     @Test
@@ -147,7 +147,7 @@ public class GetUserTests extends TestConfig {
         .and()
             .statusCode(200)
         .and()
-            .body("data.name", equalTo("Mrs. Durgeshwari Nambeesan"));
+            .body("data.name", equalTo("Adhiraj Embranthiri"));
     }
 
     @Test
