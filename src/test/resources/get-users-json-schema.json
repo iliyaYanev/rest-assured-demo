@@ -2,9 +2,6 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "properties": {
-    "code": {
-      "type": "integer"
-    },
     "meta": {
       "type": "object",
       "properties": {
@@ -22,6 +19,25 @@
             },
             "limit": {
               "type": "integer"
+            },
+            "links": {
+              "type": "object",
+              "properties": {
+                "previous": {
+                  "type": "null"
+                },
+                "current": {
+                  "type": "string"
+                },
+                "next": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "previous",
+                "current",
+                "next"
+              ]
             }
           },
           "required": [
@@ -56,12 +72,6 @@
             },
             "status": {
               "type": "string"
-            },
-            "created_at": {
-              "type": "string"
-            },
-            "updated_at": {
-              "type": "string"
             }
           },
           "required": [
@@ -69,9 +79,7 @@
             "name",
             "email",
             "gender",
-            "status",
-            "created_at",
-            "updated_at"
+            "status"
           ]
         },
         {
@@ -91,12 +99,6 @@
             },
             "status": {
               "type": "string"
-            },
-            "created_at": {
-              "type": "string"
-            },
-            "updated_at": {
-              "type": "string"
             }
           },
           "required": [
@@ -104,9 +106,7 @@
             "name",
             "email",
             "gender",
-            "status",
-            "created_at",
-            "updated_at"
+            "status"
           ]
         },
         {
@@ -126,12 +126,6 @@
             },
             "status": {
               "type": "string"
-            },
-            "created_at": {
-              "type": "string"
-            },
-            "updated_at": {
-              "type": "string"
             }
           },
           "required": [
@@ -139,9 +133,7 @@
             "name",
             "email",
             "gender",
-            "status",
-            "created_at",
-            "updated_at"
+            "status"
           ]
         },
         {
@@ -161,12 +153,6 @@
             },
             "status": {
               "type": "string"
-            },
-            "created_at": {
-              "type": "string"
-            },
-            "updated_at": {
-              "type": "string"
             }
           },
           "required": [
@@ -174,9 +160,7 @@
             "name",
             "email",
             "gender",
-            "status",
-            "created_at",
-            "updated_at"
+            "status"
           ]
         },
         {
@@ -196,12 +180,6 @@
             },
             "status": {
               "type": "string"
-            },
-            "created_at": {
-              "type": "string"
-            },
-            "updated_at": {
-              "type": "string"
             }
           },
           "required": [
@@ -209,9 +187,7 @@
             "name",
             "email",
             "gender",
-            "status",
-            "created_at",
-            "updated_at"
+            "status"
           ]
         },
         {
@@ -231,12 +207,6 @@
             },
             "status": {
               "type": "string"
-            },
-            "created_at": {
-              "type": "string"
-            },
-            "updated_at": {
-              "type": "string"
             }
           },
           "required": [
@@ -244,9 +214,7 @@
             "name",
             "email",
             "gender",
-            "status",
-            "created_at",
-            "updated_at"
+            "status"
           ]
         },
         {
@@ -266,12 +234,6 @@
             },
             "status": {
               "type": "string"
-            },
-            "created_at": {
-              "type": "string"
-            },
-            "updated_at": {
-              "type": "string"
             }
           },
           "required": [
@@ -279,9 +241,7 @@
             "name",
             "email",
             "gender",
-            "status",
-            "created_at",
-            "updated_at"
+            "status"
           ]
         },
         {
@@ -301,12 +261,6 @@
             },
             "status": {
               "type": "string"
-            },
-            "created_at": {
-              "type": "string"
-            },
-            "updated_at": {
-              "type": "string"
             }
           },
           "required": [
@@ -314,9 +268,7 @@
             "name",
             "email",
             "gender",
-            "status",
-            "created_at",
-            "updated_at"
+            "status"
           ]
         },
         {
@@ -336,12 +288,6 @@
             },
             "status": {
               "type": "string"
-            },
-            "created_at": {
-              "type": "string"
-            },
-            "updated_at": {
-              "type": "string"
             }
           },
           "required": [
@@ -349,9 +295,7 @@
             "name",
             "email",
             "gender",
-            "status",
-            "created_at",
-            "updated_at"
+            "status"
           ]
         },
         {
@@ -371,12 +315,6 @@
             },
             "status": {
               "type": "string"
-            },
-            "created_at": {
-              "type": "string"
-            },
-            "updated_at": {
-              "type": "string"
             }
           },
           "required": [
@@ -384,9 +322,7 @@
             "name",
             "email",
             "gender",
-            "status",
-            "created_at",
-            "updated_at"
+            "status"
           ]
         },
         {
@@ -406,12 +342,6 @@
             },
             "status": {
               "type": "string"
-            },
-            "created_at": {
-              "type": "string"
-            },
-            "updated_at": {
-              "type": "string"
             }
           },
           "required": [
@@ -419,9 +349,7 @@
             "name",
             "email",
             "gender",
-            "status",
-            "created_at",
-            "updated_at"
+            "status"
           ]
         },
         {
@@ -441,12 +369,6 @@
             },
             "status": {
               "type": "string"
-            },
-            "created_at": {
-              "type": "string"
-            },
-            "updated_at": {
-              "type": "string"
             }
           },
           "required": [
@@ -454,9 +376,7 @@
             "name",
             "email",
             "gender",
-            "status",
-            "created_at",
-            "updated_at"
+            "status"
           ]
         },
         {
@@ -476,12 +396,6 @@
             },
             "status": {
               "type": "string"
-            },
-            "created_at": {
-              "type": "string"
-            },
-            "updated_at": {
-              "type": "string"
             }
           },
           "required": [
@@ -489,9 +403,7 @@
             "name",
             "email",
             "gender",
-            "status",
-            "created_at",
-            "updated_at"
+            "status"
           ]
         },
         {
@@ -511,12 +423,6 @@
             },
             "status": {
               "type": "string"
-            },
-            "created_at": {
-              "type": "string"
-            },
-            "updated_at": {
-              "type": "string"
             }
           },
           "required": [
@@ -524,9 +430,7 @@
             "name",
             "email",
             "gender",
-            "status",
-            "created_at",
-            "updated_at"
+            "status"
           ]
         },
         {
@@ -546,12 +450,6 @@
             },
             "status": {
               "type": "string"
-            },
-            "created_at": {
-              "type": "string"
-            },
-            "updated_at": {
-              "type": "string"
             }
           },
           "required": [
@@ -559,9 +457,7 @@
             "name",
             "email",
             "gender",
-            "status",
-            "created_at",
-            "updated_at"
+            "status"
           ]
         },
         {
@@ -581,12 +477,6 @@
             },
             "status": {
               "type": "string"
-            },
-            "created_at": {
-              "type": "string"
-            },
-            "updated_at": {
-              "type": "string"
             }
           },
           "required": [
@@ -594,9 +484,7 @@
             "name",
             "email",
             "gender",
-            "status",
-            "created_at",
-            "updated_at"
+            "status"
           ]
         },
         {
@@ -616,12 +504,6 @@
             },
             "status": {
               "type": "string"
-            },
-            "created_at": {
-              "type": "string"
-            },
-            "updated_at": {
-              "type": "string"
             }
           },
           "required": [
@@ -629,9 +511,7 @@
             "name",
             "email",
             "gender",
-            "status",
-            "created_at",
-            "updated_at"
+            "status"
           ]
         },
         {
@@ -651,12 +531,6 @@
             },
             "status": {
               "type": "string"
-            },
-            "created_at": {
-              "type": "string"
-            },
-            "updated_at": {
-              "type": "string"
             }
           },
           "required": [
@@ -664,9 +538,7 @@
             "name",
             "email",
             "gender",
-            "status",
-            "created_at",
-            "updated_at"
+            "status"
           ]
         },
         {
@@ -686,12 +558,6 @@
             },
             "status": {
               "type": "string"
-            },
-            "created_at": {
-              "type": "string"
-            },
-            "updated_at": {
-              "type": "string"
             }
           },
           "required": [
@@ -699,9 +565,7 @@
             "name",
             "email",
             "gender",
-            "status",
-            "created_at",
-            "updated_at"
+            "status"
           ]
         },
         {
@@ -721,12 +585,6 @@
             },
             "status": {
               "type": "string"
-            },
-            "created_at": {
-              "type": "string"
-            },
-            "updated_at": {
-              "type": "string"
             }
           },
           "required": [
@@ -734,16 +592,13 @@
             "name",
             "email",
             "gender",
-            "status",
-            "created_at",
-            "updated_at"
+            "status"
           ]
         }
       ]
     }
   },
   "required": [
-    "code",
     "meta",
     "data"
   ]

@@ -88,8 +88,8 @@ public class CreateUserTests extends TestConfig {
     public void createUserDeserializeResponse() {
         CreateUser createUser = new CreateUser();
         createUser.setName(faker.name().fullName());
-        createUser.setGender("Male");
-        createUser.setStatus("Active");
+        createUser.setGender("male");
+        createUser.setStatus("active");
         createUser.setEmail(faker.internet().emailAddress());
 
         BaseResponse response = given()

@@ -1,6 +1,6 @@
 {
   "name":"Iliya Yanev",
-  "gender":"Male",
-  "email":"awesome12@email.com",
-  "status":"Active"
+  "gender":"male",
+  "email":"awesome12345@email.com",
+  "status":"active"
 }

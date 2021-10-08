@@ -85,7 +85,7 @@ public class GetUserTests extends TestConfig {
             .log()
             .ifValidationFails(LogDetail.BODY)
         .and()
-            .body("data.findAll {it.name.equals('Vishwamitra Agarwal')}.email", hasItem("vishwamitra_agarwal@pouros.org"));
+            .body("data.findAll {it.name.equals('John Stephen ')}.email", hasItem("john.stephen.561@gmail.com"));
     }
 
     @Test
@@ -147,7 +147,7 @@ public class GetUserTests extends TestConfig {
         .and()
             .statusCode(200)
         .and()
-            .body("data.name", equalTo("Adhiraj Embranthiri"));
+            .body("data.name", equalTo("Gatik Varrier IV"));
     }
 
     @Test
@@ -155,7 +155,7 @@ public class GetUserTests extends TestConfig {
         File jsonSchema = new File(System.getProperty("user.dir") + "/src/test/resources/get-users-json-schema.json");
 
         given()
-            .accept( ContentType.JSON)
+            .accept(ContentType.JSON)
         .and()
             .auth()
             .oauth2(apiToken)
