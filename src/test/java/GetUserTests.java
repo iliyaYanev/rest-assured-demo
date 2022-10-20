@@ -85,7 +85,7 @@ public class GetUserTests extends TestConfig {
             .log()
             .ifValidationFails(LogDetail.BODY)
         .and()
-            .body("data.findAll {it.name.equals('John Stephen ')}.email", hasItem("john.stephen.561@gmail.com"));
+            .body("data.findAll {it.name.equals('Leela Acharya')}.email", hasItem("leela_acharya@cummings-schowalter.info"));
     }
 
     @Test
@@ -147,7 +147,7 @@ public class GetUserTests extends TestConfig {
         .and()
             .statusCode(200)
         .and()
-            .body("data.name", equalTo("Gatik Varrier IV"));
+            .body("data.name", equalTo("Chitramala Nair"));
     }
 
     @Test
