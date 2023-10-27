@@ -1,7 +1,6 @@
 package dao;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.time.Instant;
 
 public class User {
 
