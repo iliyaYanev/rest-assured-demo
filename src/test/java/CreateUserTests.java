@@ -108,7 +108,7 @@ public class CreateUserTests extends TestConfig {
                 .log()
                 .body()
             .and()
-                .body("code", equalTo(201))
+                .statusCode(201)
             .extract()
             .as(BaseResponse.class);
 

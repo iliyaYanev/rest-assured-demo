@@ -18,28 +18,13 @@ public class GetUserTests extends TestConfig {
         when()
             .get(users)
         .then()
-            .statusCode(200);
-    }
-
-    @Test
-    public void getUserInvalidCredentials() {
-        String userId = "123";
-        when()
-            .get(users.concat("/").concat(userId))
-        .then()
             .statusCode(200)
-        .and()
-            .rootPath("data")
-            .body("code", equalTo(401))
-            .body("name", equalTo("Unauthorized"))
-        .and()
-            .log()
-            .all();
+            .log().body();
     }
 
     @Test
     public void getUserOAuth() {
-        String userId = "125155161616";
+        String userId = "7882184";
 
         given()
             .spec(requestSpec)
@@ -48,15 +33,12 @@ public class GetUserTests extends TestConfig {
         .when()
             .get(usersById)
         .then()
-            .spec(responseOkSpec)
-        .and()
-            .body("code", equalTo(404))
-            .body("data.message", equalTo("Resource not found"));
+            .spec(responseOkSpec);
     }
 
     @Test
     public void getUserBasicAuth() {
-        String userId = "456";
+        String userId = "7882184";
 
         given()
             .accept(ContentType.JSON)
@@ -67,10 +49,9 @@ public class GetUserTests extends TestConfig {
         .then()
             .statusCode(200)
         .and()
-            .body("code", equalTo(401))
-            .body("message", equalTo("Your request was made with invalid credentials."))
+            .body("name", equalTo("Dakshayani Kapoor"))
         .log()
-        .body();
+            .body();
     }
 
     @Test
@@ -85,7 +66,7 @@ public class GetUserTests extends TestConfig {
             .log()
             .ifValidationFails(LogDetail.BODY)
         .and()
-            .body("data.findAll {it.name.equals('Leela Acharya')}.email", hasItem("leela_acharya@cummings-schowalter.info"));
+            .body("[0].email", equalTo("kapoor_dakshayani@shanahan.example"));
     }
 
     @Test
@@ -125,12 +106,12 @@ public class GetUserTests extends TestConfig {
         .and()
             .statusCode(200)
         .and()
-            .body("data.findAll { !it.name.equals('Swara Trivedi') }", hasSize(0));
+            .body("it.findAll { !it.name.equals('Swara Trivedi') }", hasSize(0));
     }
 
     @Test
     public void pathParamTest() {
-        String userId = "815";
+        String userId = "7882184";
 
         given()
             .accept(ContentType.JSON)
@@ -147,7 +128,7 @@ public class GetUserTests extends TestConfig {
         .and()
             .statusCode(200)
         .and()
-            .body("data.name", equalTo("Chitramala Nair"));
+            .body("name", equalTo("Dakshayani Kapoor"));
     }
 
     @Test

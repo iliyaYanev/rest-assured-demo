@@ -32,7 +32,7 @@ public class TestConfig {
 
     @BeforeEach
     public void setup() throws IOException {
-        RestAssured.baseURI = "https://gorest.co.in/public-api";
+        RestAssured.baseURI = "https://gorest.co.in/public/v2";
         JsonPath.config = new JsonPathConfig("UTF-8");
         RestAssured.defaultParser = Parser.JSON;
 
